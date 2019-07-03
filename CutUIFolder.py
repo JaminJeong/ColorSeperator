@@ -87,18 +87,19 @@ class CutUI:
         img_variation = np.zeros_like(self.image)
         h, w, c = img_variation.shape
         x = 0
-        split_num = 10
-        for idx in range(split_num):
-            color = self.lower[0] + int(abs(self.lower[0] - self.upper[0]) * idx / split_num)
-            # print("color : " + str(color))
-            color = np.array([[[color, 200, 200]]])
-            color = cv2.cvtColor(color.astype(np.uint8), cv2.COLOR_HSV2RGB)
-            color = color[0][0]
-            cv2.rectangle(img_variation,
-                          (x + idx * int(w / split_num), 0),
-                          (x + (idx + 1) * int(w / split_num), h),
-                          (int(color[0]), int(color[1]), int(color[2])), # (idx * (255 / split_num), 100, 100),
-                          cv2.FILLED)
+        split_num = 30
+        if self.upper[0] > self.lower[0]:
+            for idx in range(split_num):
+                color = self.lower[0] + int(abs(self.upper[0] - self.lower[0]) * idx / split_num)
+                # print("color : " + str(color))
+                color = np.array([[[color, 200, 200]]])
+                color = cv2.cvtColor(color.astype(np.uint8), cv2.COLOR_HSV2RGB)
+                color = color[0][0]
+                cv2.rectangle(img_variation,
+                              (x + idx * int(w / split_num), 0),
+                              (x + (idx + 1) * int(w / split_num), h),
+                              (int(color[0]), int(color[1]), int(color[2])), # (idx * (255 / split_num), 100, 100),
+                              cv2.FILLED)
 
         image_sum1 = np.concatenate((self.image, img_result), axis=1)
         image_sum2 = np.concatenate((img_mask, img_variation), axis=1)
