@@ -16,7 +16,7 @@ upper_blue = (20, 255, 200)
 
 
 # 이미지 파일을 읽어온다
-img = cv2.imread("/home/jamin/projects/Code/ColorSeperator/test2.jpg", cv2.IMREAD_COLOR)
+img = cv2.imread("/home/jamin/projects/Code/ColorSeperator/image/test2.jpg", cv2.IMREAD_COLOR)
 
 # BGR to HSV 변환
 img_hsv = cv2.cvtColor(img, cv2.COLOR_RGB2HSV)
