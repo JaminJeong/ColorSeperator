@@ -120,18 +120,19 @@ class CutUI:
 
         print("point : " + str(self.point))
 
-# import argparse
+import argparse
 
 if __name__ == '__main__':
-    # parser = argparse.ArgumentParser(prog="Interactive Graph Cut",
-    #                                  description="Interactively segment an image", add_help=True)
-    # parser.add_argument('-i', '--INFILE', help='Input image file to segment.', required=True)
-    # parser.add_argument('-o', '--OUTFILE', help='Used to save segmented images.', required=True)
-    # args = parser.parse_args()
+    parser = argparse.ArgumentParser(prog="Coloer Picker And Seperator",
+                                     description="extract color parts", add_help=True)
+    parser.add_argument('-p', '--PICKERFILE', help='color picker image.', required=True)
+    parser.add_argument('-l', '--LOADFILE', help='target images.', required=True)
+    args = parser.parse_args()
 
-    # ui = CutUI(args.INFILE)
-    ui = CutUI("/home/jamin/projects/Code/ColorSeperator/image/hsv_bar.png")
-    ui.load_image("/home/jamin/projects/Code/ColorSeperator/image/cUTqm.png")
+    # ui = CutUI("/home/jamin/projects/Code/ColorSeperator/image/hsv_bar.png")
+    ui = CutUI(args.PICKERFILE)
+    # ui.load_image("/home/jamin/projects/Code/ColorSeperator/image/cUTqm.png")
+    ui.load_image(args.LOADFILE)
     ui.run()
 
 # import Color
