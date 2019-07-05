@@ -129,23 +129,6 @@ if __name__ == '__main__':
     parser.add_argument('-l', '--LOADFILE', help='target images.', required=True)
     args = parser.parse_args()
 
-    # ui = CutUI("/home/jamin/projects/Code/ColorSeperator/image/hsv_bar.png")
     ui = CutUI(args.PICKERFILE)
-    # ui.load_image("/home/jamin/projects/Code/ColorSeperator/image/cUTqm.png")
     ui.load_image(args.LOADFILE)
     ui.run()
-
-# import Color
-# import cv2
-# import numpy as np
-
-# a = Color.color_string_map["red"]
-# b = np.reshape(a, [1, 1, 3]).astype(np.uint8)
-#
-# c = cv2.cvtColor(b, cv2.COLOR_RGB2HSV)
-# image = cv2.imread("/home/jamin/projects/Code/ColorSeperator/image/hsv_bar.png")
-# h, w, c = image.shape
-
-# color = np.array([[[100, 100, 100]]])
-# color = cv2.cvtColor(color.astype(np.uint8), cv2.COLOR_HSV2RGB)
-# color = color[0][0]
