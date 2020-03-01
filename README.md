@@ -40,3 +40,46 @@ python3 ColorSeperator.py \
 
 ```
 
+# Color Seperator
+
+![image of result](./image/Result.png)
+
+
+## Color Picker and Seperator
+### Explaination of result
+ 1. left up. a original image
+ 2. right up. a seperated image which you want color ranges.
+ 3. left down. a mask image.
+ 4. right down. color range which is choosed in h(hue) space.
+ 
+### Explainatino of files
+ - ColorPickerAndSeperator.sh
+   - it is appeared two windows. and you have to choice two colors in color picker.
+   - if you change the image, change a image path in script files. 
+   - Parameter
+    - -p, --PICKERFILE : image for color picker
+    - -l, --LOADFILE : target image
+   
+```bash 
+bash ColorPickerAndSeperator.sh
+```
+    
+### keyboard event
+ * q : quit
+
+## Color Seperator
+ - 입력 폴더에 들어 있는 파일등을 정해진 범위 (lower ~ upper)의 색상 값을 추출하여 저장함.
+    - lower and upper values only use H(Hue) in hsv channel space.
+    - ColorSeperator.sh
+
+```bash
+python3 ColorSeperator.py \
+    -i "/path/your/input/image" \
+    -o "./output" \
+    -u 100 \ # upper color
+    -l 10 \ #lower color
+
+```
+
+
+
