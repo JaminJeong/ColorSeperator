@@ -68,13 +68,12 @@ bash ColorPickerAndSeperator.sh
  * q : quit
 
 ## Color Seperator
- - 입력 폴더에 들어 있는 파일등을 정해진 범위 (lower ~ upper)의 색상 값을 추출하여 저장함.
-    - lower and upper values only use H(Hue) in hsv channel space.
-    - ColorSeperator.sh
+ - lower and upper values only use H(Hue) in hsv channel space.
+ - ColorSeperator.sh
 
 ```bash
 python3 ColorSeperator.py \
-    -i "/path/your/input/image" \
+    -i "/your/path/input/image" \
     -o "./output" \
     -u 100 \ # upper color
     -l 10 \ #lower color
